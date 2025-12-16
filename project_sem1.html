@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GameX Merch - Gaming Store</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #0d0d0d;
+      color: white;
+    }
+    header {
+      background: #111;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+    }
+    header h1 { color: #30a8ff; }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 18px;
+    }
+    nav a:hover { color: #30a8ff; }
+
+    /* HERO */
+    .hero {
+      background: url('https://wallpapercave.com/wp/wp7424073.jpg') no-repeat center/cover;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      padding-left: 40px;
+    }
+    .hero h2 {
+      font-size: 48px;
+      max-width: 500px;
+    }
+
+    /* PRODUCT GRID */
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      margin-top: 40px;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 30px;
+    }
+    .product-card {
+      background: #1a1a1a;
+      padding: 15px;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+    .product-card:hover {
+      transform: scale(1.05);
+    }
+    .product-card img {
+      width: 100%;
+      border-radius: 10px;
+      height: 200px;
+      object-fit: cover;
+    }
+    .product-card button {
+      width: 100%;
+      padding: 10px;
+      background: #30a8ff;
+      border: none;
+      font-size: 16px;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>GameX Merch</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#cart">Cart</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+    <h2>Upgrade Your Gaming Setup with Premium Gear</h2>
+  </section>
+
+  <!-- PRODUCTS SECTION -->
+  <h2 class="section-title" id="products">Featured Products</h2>
+  <div class="products">
+
+    <div class="product-card">
+        <img src="https://i5.walmartimages.com/asr/1485b39b-504f-4398-865c-9c3e33719918_1.c056e9795978b3538b6581c669a279c3.jpeg" alt="gaming keyboard">
+      <h3>RGB Gaming Keyboard</h3>
+      <p>₹1,599</p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/61tl-Fi6-uL._AC_SL1500_.jpg">
+      <h3>Gaming Headset</h3>
+      <p>₹2,299</p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/61fEpBysnmL._AC_SL1280_.jpg">
+      <h3>RGB Gaming Mouse</h3>
+      <p>₹899</p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://cdn.shopify.com/s/files/1/0073/0169/3551/files/playstation-legend-pedestal-2021029_1_abf77133-6820-4c4a-b19b-84fc0b491173.jpg?v=1697461959">
+      <h3>Gaming Chair</h3>
+      <p>₹9,999</p>
+      <button>Add to Cart</button>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <p>Contact: gamexmerch@gmail.com</p>
+    <p>© 2025 GameX Merch. All Rights Reserved.</p>
+    <p>📍 <strong>Address:</strong> Ghaziabad, Uttar Pradesh</p>
+    <p>📞 <strong>Phone:</strong> 9998882220</p>
+    <p>📧 <strong>Email:</strong> abesgamingmerch123@gmail.com</p>
+    <p>📸 <strong>Instagram:</strong> abesgamingmerch</p>
+  </footer>
+</body>
+</html>
