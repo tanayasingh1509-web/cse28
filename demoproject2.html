@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameX Merch | Gaming Store</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0d0d0d;
+  color: white;
+}
+
+header {
+  background: #111;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+
+header h1 { color: #30a8ff; }
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 18px;
+}
+
+nav a:hover { color: #30a8ff; }
+
+.hero {
+  background: url('https://wallpapercave.com/wp/wp7424073.jpg') no-repeat center/cover;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  padding-left: 40px;
+}
+
+.hero h2 { font-size: 48px; }
+
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  margin-top: 40px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+.product-card {
+  background: #1a1a1a;
+  padding: 15px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.product-card:hover { transform: scale(1.05); }
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.product-card button {
+  width: 100%;
+  padding: 10px;
+  background: #30a8ff;
+  border: none;
+  font-size: 16px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#cart {
+  background: #111;
+  margin: 30px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#cart ul { list-style: none; padding: 0; }
+
+#cart li {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+#cart button {
+  background: red;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.buy-btn {
+  margin-top: 10px;
+  padding: 12px;
+  width: 100%;
+  background: #00ff88;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.feedback {
+  background: #1a1a1a;
+  margin: 30px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.feedback input, .feedback textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.feedback button {
+  margin-top: 10px;
+  padding: 10px;
+  background: #30a8ff;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+footer {
+  background: #111;
+  text-align: center;
+  padding: 20px;
+}
+
+/* BUY MODAL */
+#buyBox {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+#buyBox div {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>GameX Merch</h1>
+<nav>
+<a href="#products">Products</a>
+<a href="#cart">Cart</a>
+<a href="#feedback">Feedback</a>
+</nav>
+</header>
+
+<section class="hero">
+<h2>Upgrade Your Gaming Setup with Premium Gear</h2>
+</section>
+
+<h2 class="section-title" id="products">Products</h2>
+
+<div class="products">
+
+<div class="product-card">
+<img src="https://i5.walmartimages.com/asr/1485b39b-504f-4398-865c-9c3e33719918_1.c056e9795978b3538b6581c669a279c3.jpeg">
+<h3>RGB Gaming Keyboard</h3>
+<p>₹1599</p>
+<button onclick="addToCart('RGB Gaming Keyboard',1599)">Add to Cart</button>
+</div>
+
+<div class="product-card">
+<img src="https://m.media-amazon.com/images/I/61tl-Fi6-uL._AC_SL1500_.jpg">
+<h3>Gaming Headset</h3>
+<p>₹2299</p>
+<button onclick="addToCart('Gaming Headset',2299)">Add to Cart</button>
+</div>
+
+<div class="product-card">
+<img src="https://m.media-amazon.com/images/I/61fEpBysnmL._AC_SL1280_.jpg">
+<h3>RGB Gaming Mouse</h3>
+<p>₹899</p>
+<button onclick="addToCart('RGB Gaming Mouse',899)">Add to Cart</button>
+</div>
+
+<div class="product-card">
+<img src="https://cdn.shopify.com/s/files/1/0073/0169/3551/files/playstation-legend-pedestal-2021029_1_abf77133-6820-4c4a-b19b-84fc0b491173.jpg">
+<h3>Gaming Chair</h3>
+<p>₹9999</p>
+<button onclick="addToCart('Gaming Chair',9999)">Add to Cart</button>
+</div>
+
+<div class="product-card">
+<img src="https://image.benq.com/is/image/benqco/gaming-product-kv-m?$ResponsivePreset$">
+<h3>24” Gaming Monitor</h3>
+<p>₹12499</p>
+<button onclick="addToCart('Gaming Monitor',12499)">Add to Cart</button>
+</div>
+
+<div class="product-card">
+<img src="https://ambraneindia.com/cdn/shop/products/gamingcontrollerlisting-08_jpg.webp">
+<h3>Wireless Gaming Controller</h3>
+<p>₹1999</p>
+<button onclick="addToCart('Gaming Controller',1999)">Add to Cart</button>
+</div>
+
+<div class="product-card">
+<img src="https://www.jiomart.com/images/product/original/rvlczxxbak/adzoy-professional-large-extended-rgb-gaming-mouse-pad-non-slip-rubber-base-soft-glowing-led-gaming-desk-keyboard-pad-mat-800-x-300-x-4-mm-mousepad-product-images-orvlczxxbak-p594497348-1-202210150820.jpg">
+<h3>RGB Mouse Pad</h3>
+<p>₹799</p>
+<button onclick="addToCart('RGB Mouse Pad',799)">Add to Cart</button>
+</div>
+
+<div class="product-card">
+<img src="https://www.redragon.in/cdn/shop/products/gs520gamingspeaker.webp">
+<h3>RGB Gaming Speakers</h3>
+<p>₹1499</p>
+<button onclick="addToCart('Gaming Speakers',1499)">Add to Cart</button>
+</div>
+
+</div>
+
+<div id="cart">
+<h2>Your Cart</h2>
+<ul id="cartItems"></ul>
+<h3>Total: ₹<span id="total">0</span></h3>
+<button class="buy-btn" onclick="buyNow()">Buy Now</button>
+</div>
+
+<div class="feedback" id="feedback">
+<h2>User Feedback</h2>
+<input id="name" placeholder="Your Name">
+<textarea id="message" rows="4" placeholder="Your Feedback"></textarea>
+<button onclick="submitFeedback()">Submit</button>
+</div>
+
+<footer>
+<p>© 2025 GameX Merch | Ghaziabad, UP</p>
+</footer>
+
+<!-- BUY MODAL -->
+<div id="buyBox">
+<div>
+<h2>Checkout</h2>
+<input id="buyerName" placeholder="Your Name">
+<textarea id="buyerAddress" placeholder="Delivery Address"></textarea>
+<p>Total Payable: ₹<span id="finalAmount"></span></p>
+<button onclick="confirmOrder()">Confirm Order</button>
+<button onclick="closeBuyBox()" style="background:red;margin-top:5px;">Cancel</button>
+</div>
+</div>
+
+<script>
+let total = 0;
+const cartItems = document.getElementById("cartItems");
+const totalDisplay = document.getElementById("total");
+
+function addToCart(name, price) {
+  const li = document.createElement("li");
+  li.innerHTML = `${name} - ₹${price} <button onclick="removeItem(this, ${price})">X</button>`;
+  cartItems.appendChild(li);
+  total += price;
+  totalDisplay.innerText = total;
+}
+
+function removeItem(btn, price) {
+  btn.parentElement.remove();
+  total -= price;
+  totalDisplay.innerText = total;
+}
+
+function buyNow() {
+  if (total === 0) {
+    alert("Your cart is empty!");
+    return;
+  }
+  document.getElementById("buyBox").style.display = "flex";
+  document.getElementById("finalAmount").innerText = total;
+}
+
+function closeBuyBox() {
+  document.getElementById("buyBox").style.display = "none";
+}
+
+function confirmOrder() {
+  const name = document.getElementById("buyerName").value;
+  const address = document.getElementById("buyerAddress").value;
+
+  if (!name || !address) {
+    alert("Please fill all details!");
+    return;
+  }
+
+  alert("Order Successful!\nThank you " + name + "\nTotal Paid: ₹" + total);
+
+  cartItems.innerHTML = "";
+  total = 0;
+  totalDisplay.innerText = 0;
+  closeBuyBox();
+}
+
+function submitFeedback() {
+  const name = document.getElementById("name").value;
+  const msg = document.getElementById("message").value;
+  if (name && msg) {
+    alert("Thank you for your feedback, " + name + "!");
+    document.getElementById("name").value = "";
+    document.getElementById("message").value = "";
+  } else {
+    alert("Please fill all fields!");
+  }
+}
+</script>
+
+</body>
+</html>
+
